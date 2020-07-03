@@ -1,0 +1,5 @@
+const hoge = readFile('hoge.txt')
+const fuga = readFile('fuga.txt')
+const foo = readFile('foo.txt')
+const bar = readFile('bar.txt')
+console.log(hoge + fuga + foo + bar)
