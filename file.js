@@ -6,7 +6,7 @@ function readFile(fileName, success) {
   }, 500)
 }
 function readFileAsync(fileName) {
-  const d = new $.Deferred()
-  setTimeout(() => d.resolve(fileName), 500)
-  return d.promise()
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(fileName), 500)
+  })
 }

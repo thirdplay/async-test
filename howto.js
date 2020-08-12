@@ -1,14 +1,14 @@
-const deferred = function(str) {
-  const d = new $.Deferred()
-  setTimeout(() => d.resolve(str), 500)
-  return d.promise()
+const promise = function(str) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(str), 500)
+  })
 }
 
-deferred('foo')
+promise('foo')
   .then(
     (val) => {
       console.log(val)
-      return deferred('bar')
+      return promise('bar')
     })
-  .done((val) => console.log(val))
-  .fail((err) => console.log(err))
+  .then((val) => console.log(val))
+  .catch((err) => console.log(err))
